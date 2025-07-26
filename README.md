@@ -1,4 +1,4 @@
-# API de Login (Estudo)
+# API de Login
 
 Esta é uma API REST para gestão de login, criada para fins de estudo de testes de software. Não utiliza banco de dados, todas as informações são armazenadas em memória.
 
