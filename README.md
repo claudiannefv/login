@@ -1,5 +1,6 @@
 # Sistema de Login - API e Aplicação Web
 
+
 Este projeto inclui uma API REST para gestão de login e uma aplicação web moderna que consome essa API.
 
 ## 🚀 Funcionalidades
@@ -80,8 +81,8 @@ npm test
 curl -X POST http://localhost:3000/login \
   -H "Content-Type: application/json" \
   -d '{"usuario": "maria", "senha": "123456"}'
-```
 
+```
 #### Recuperar Senha
 ```bash
 curl -X POST http://localhost:3000/recuperar-senha \
@@ -146,3 +147,8 @@ Este projeto está sob a licença ISC. Veja o arquivo `package.json` para mais d
 ## 📞 Suporte
 
 Para dúvidas ou problemas, abra uma issue no repositório do projeto. 
+=======
+## Observações
+- Usuário padrão para teste: `maria` / senha: `123456`
+- Após 3 tentativas de senha errada, o usuário é bloqueado.
+- A recuperação de senha "desbloqueia" o usuário e retorna a senha cadastrada (apenas para fins de estudo). 
