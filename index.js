@@ -5,6 +5,21 @@ const swaggerJsdoc = require('swagger-jsdoc');
 const app = express();
 app.use(express.json());
 
+// Configurar CORS para permitir requisições da aplicação web
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(200);
+  } else {
+    next();
+  }
+});
+
+// Servir arquivos estáticos da aplicação web
+app.use(express.static('public'));
+
 // Dados em memória
 const users = {
   'maria': { senha: '123456', tentativas: 0, bloqueado: false }
@@ -27,6 +42,11 @@ const swaggerOptions = {
 };
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+
+// Rota para a página principal
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
 
 /**
  * @swagger

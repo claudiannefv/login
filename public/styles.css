@@ -1,0 +1,148 @@
+/* Estilos personalizados para a aplicação de login */
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+    margin-top: 50px;
+}
+
+.card-content {
+    padding: 40px 30px;
+}
+
+.card-title {
+    margin-bottom: 30px !important;
+}
+
+.card-title i {
+    margin-bottom: 10px;
+}
+
+.input-field {
+    margin-bottom: 20px;
+}
+
+.input-field input:focus + label {
+    color: #1976d2 !important;
+}
+
+.input-field input:focus {
+    border-bottom: 1px solid #1976d2 !important;
+    box-shadow: 0 1px 0 0 #1976d2 !important;
+}
+
+.btn {
+    border-radius: 25px;
+    text-transform: none;
+    font-weight: 500;
+    padding: 0 30px;
+    height: 45px;
+    line-height: 45px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+#recuperarSenhaLink, #voltarLoginLink {
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+#recuperarSenhaLink:hover, #voltarLoginLink:hover {
+    text-decoration: underline;
+    transform: translateY(-1px);
+}
+
+/* Animações */
+.card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media only screen and (max-width: 600px) {
+    .card-content {
+        padding: 30px 20px;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Loading spinner */
+.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #ffffff;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Toast personalizado */
+.toast {
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.toast.success {
+    background-color: #4caf50;
+}
+
+.toast.error {
+    background-color: #f44336;
+}
+
+.toast.warning {
+    background-color: #ff9800;
+}
+
+

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Login</title>
+    
+    <!-- MaterializeCSS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="blue darken-3">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo">Sistema de Login</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m8 offset-m2 l6 offset-l3">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title center-align">
+                            <i class="material-icons large blue-text">account_circle</i>
+                        </span>
+                        
+                        <!-- Formulário de Login -->
+                        <form id="loginForm">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">person</i>
+                                    <input id="usuario" type="text" class="validate" required>
+                                    <label for="usuario" class="active">Usuário</label>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">lock</i>
+                                    <input id="senha" type="password" class="validate" required>
+                                    <label for="senha" class="active">Senha</label>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col s12 center-align">
+                                    <button id="btn" class="btn waves-effect waves-light blue darken-3" type="submit">
+                                        <i class="material-icons left">login</i>
+                                        Entrar
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <!-- Link para recuperar senha -->
+                        <div class="row">
+                            <div class="col s12 center-align">
+                                <a href="#" id="recuperarSenhaLink" class="blue-text text-darken-3">
+                                    <i class="material-icons tiny">help</i>
+                                    Esqueci minha senha
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Card para recuperar senha (inicialmente oculto) -->
+                <div class="card" id="recuperarSenhaCard" style="display: none;">
+                    <div class="card-content">
+                        <span class="card-title center-align">
+                            <i class="material-icons large orange-text">lock_reset</i>
+                        </span>
+                        
+                        <form id="recuperarSenhaForm">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">person</i>
+                                    <input id="usuarioRecuperar" type="text" class="validate" required>
+                                    <label for="usuarioRecuperar">Usuário</label>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col s12 center-align">
+                                    <button class="btn waves-effect waves-light orange darken-3" type="submit">
+                                        <i class="material-icons left">refresh</i>
+                                        Recuperar Senha
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <div class="row">
+                            <div class="col s12 center-align">
+                                <a href="#" id="voltarLoginLink" class="blue-text text-darken-3">
+                                    <i class="material-icons tiny">arrow_back</i>
+                                    Voltar ao login
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MaterializeCSS JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+
+
